@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght,ELSH@100..900,0..100&family=Special+Elite&family=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>JavaScript Calculator</h1>
+    <h1 id="title">JavaScript Calculator</h1>
     <div id="calc" class="input">
-        <input type="text" id="userInput" placeholder="1+1=11">
+        <input id="display" type="text" id="userInput" placeholder="1+1=11">
     </div>
-    <div1 id="calcArea" class="inputBtn">
-        <button id="add" class="btn">+</button>
-        <button id="subtract" class="btn">-</button>
-        <button id="multiply" class="btn">*</button>
-        <button id="divide" class="btn">/</button>
-        <button id="7" class="btn">7</button>
-        <button id="8" class="btn">8</button>
-        <button id="9" class="btn">9</button>
-        <button id="clear" class="btn">CLR</button>
-        <button id="4" class="btn">4</button>
-        <button id="5" class="btn">5</button>
-        <button id="6" class="btn">6</button>
-        <button id="equals" class="btn">=</button>
-        <button id="1" class="btn">1</button>
-        <button id="2" class="btn">2</button>
-        <button id="3" class="btn">3</button>
-        <button id="0" class="btn">0</button>
-    </div1>
+    <div id="calcArea" class="inputBtn">
+        <button id="add" class="btn" data-operator="+">+</button>
+        <button id="subtract" class="btn" data-operator="-">-</button>
+        <button id="multiply" class="btn" data-operator="*">*</button>
+        <button id="divide" class="btn" data-operator="/">/</button>
+        <button id="seven" class="btn" data-number="7">7</button>
+        <button id="eight" class="btn" data-number="8">8</button>
+        <button id="nine" class="btn" data-number="9">9</button>
+        <button id="clr" class="btn" data-action="clear">C</button>
+        <button id="four" class="btn" data-number="4">4</button>
+        <button id="five" class="btn" data-number="5">5</button>
+        <button id="six" class="btn" data-number="6">6</button>
+        <button id="equals" class="btn" data-action="=">=</button>
+        <button id="one" class="btn" data-number="1">1</button>
+        <button id="two" class="btn" data-number="2">2</button>
+        <button id="three" class="btn" data-number="3">3</button>
+        <button id="zero" class="btn" data-number="0">0</button>
+    </div>
+    <script src="calc-scripts.js">
+
+    </script>
     
 </body>
 </html>

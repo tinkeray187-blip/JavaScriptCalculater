@@ -1,0 +1,64 @@
+/* style.css */
+/* JavaScript Calculator */
+
+* {
+    outline: solid red 2px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title {
+    font-size: 3.5rem;
+    font-family: "Special Elite", system-ui;
+}
+
+#display {
+    width: 396px;
+    height: 50px;
+    font-size: 2rem;
+    font-family: "Special Elite", system-ui;
+}
+
+#calcArea {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 500px;
+}
+
+.btn {
+    box-sizing: border-box;
+    width: 100px;
+    font-size: 2.5rem;
+    font-family: "Special Elite", system-ui;
+}
+
+
+/* // <weight>: Use a value from 100 to 900
+// <element shape>: Use a value from 0 to 100
+// <uniquifier>: Use a unique and descriptive class name
+ */
+
+/* 
+.bitcount-prop-single-<uniquifier> {
+  font-family: "Bitcount Prop Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" <element shape>,
+    "ELXP" 0;
+} */
+/* 
+.special-elite-regular {
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+   */

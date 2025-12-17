@@ -52,29 +52,36 @@ function operate(operator, num1, num2) {
 console.log(operate('+', 10, 5)); 
 console.log(operate('*', 4, 3)); 
 
+const btns = document.querySelectorAll('.btn')
+
+btns.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        const btn = e.target;
+        const actiontype = btn.dataset;
+        if (btn.dataset.number) {
+            console.log('Number:', btn.dataset.number);
+        }
+
+        if (btn.dataset.operator) {
+            console.log('Operator:', btn.dataset.operator);
+        }
+
+        if (btn.dataset.action) {
+            console.log('Action:', btn.dataset.action);
+        }
+        console.log(btn.dataset)
+        
+    })
+        
+})
+//     const btn= e.target;
+//     const operation = btn.dataset.operator;
+
+// })
 
 
 
 
-
-// LESSON 4 — HTML Skeleton (No JS Logic Yet)
-// 🎯 Objective
-// Build the calculator structure only.
-// 🧩 Concepts
-// Buttons
-// Display
-// Semantic grouping
-// 🪜 Guided Steps
-// Create:
-// A display area
-// Digit buttons (0–9)
-// Operator buttons (+ − × ÷)
-// Equals button
-// Clear button
-// Clicking buttons should do nothing yet.
-// ✅ Checkpoint
-// Why is it important to build the HTML before wiring logic?
-// What type of element is best for the display, and why?
 
 
 
