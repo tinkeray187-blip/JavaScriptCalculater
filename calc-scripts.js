@@ -27,12 +27,6 @@ console.log(multiply(9, 2))
 console.log(subtract(6, 2))
 console.log(add(4, 8))
 
-let firstNumber = 1
-let operator = '+'
-let secondNumber = 2
-
- console.log(firstNumber, operator, secondNumber)
-
 function operate(operator, num1, num2) {
     switch (operator) {
         case '+':
@@ -52,21 +46,45 @@ function operate(operator, num1, num2) {
 console.log(operate('+', 10, 5)); 
 console.log(operate('*', 4, 3)); 
 
-const btns = document.querySelectorAll('.btn')
 
-btns.forEach((button) => {
-    button.addEventListener('click', (e) => {
-        const btn = e.target;
-        const actiontype = btn.dataset;
+let firstNumber = 1;
+let operator = '+';
+let secondNumber = 2;
+let currentNumber = '';
+let currentOperator = '';
+let shouldResetDisplay = false;
+
+const display = document.getElementById('display')
+const btns = document.querySelectorAll('.btn') //selects all buttons and makes them into a node list
+
+btns.forEach((button) => { //loops through each button individually 
+    button.addEventListener('click', (e) => { // attaches 'click' listener to each button
+        const btn = e.target; // what button was actually clicked
         if (btn.dataset.number) {
+            if (shouldResetDisplay) {
+                currentNumber = '';
+                shouldResetDisplay = false;
+            }
+            currentNumber += btn.dataset.number;
+            display.value = currentNumber;
             console.log('Number:', btn.dataset.number);
         }
 
         if (btn.dataset.operator) {
-            console.log('Operator:', btn.dataset.operator);
+            if (firstNumber !== null && currentOperator && currentNumber) {
+                const result = operate(currentOperator, firstNumber, Number(currentNumber));
+                display.value = result;
+                firstNumber = result;
+            }else {
+                firstNumber = Number(currentNumber);
+                currentNumber = '';
+            
+            }
+            currentOperator = btn.dataset.operator;
+            console.log('Fisrst Number:', firstNumber, 'Operator:', currentOperator);
         }
 
-        if (btn.dataset.action) {
+        if (btn.dataset.action === '=') {
             console.log('Action:', btn.dataset.action);
         }
         console.log(btn.dataset)
@@ -74,10 +92,14 @@ btns.forEach((button) => {
     })
         
 })
-//     const btn= e.target;
-//     const operation = btn.dataset.operator;
 
-// })
+
+
+
+
+
+
+
 
 
 
