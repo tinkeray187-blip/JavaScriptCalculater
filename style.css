@@ -1,33 +1,44 @@
 /* style.css */
 /* JavaScript Calculator */
 
-* {
-    outline: solid red 2px;
-}
+ * {
+    background-color: antiquewhite;
+} 
 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 #title {
     font-size: 3.5rem;
     font-family: "Special Elite", system-ui;
+    color: black;
+    text-decoration: underline;
 }
 
+.inputBtn {
+    border: double black 4px;
+}
 #display {
     width: 396px;
     height: 50px;
     font-size: 2rem;
     font-family: "Special Elite", system-ui;
+    border: solid black 4px;
+    border-radius: 5px;
 }
+
+
 
 #calcArea {
     display: flex;
     flex-wrap: wrap;
     width: 400px;
     height: 500px;
+
 }
 
 .btn {
@@ -35,6 +46,14 @@ body {
     width: 100px;
     font-size: 2.5rem;
     font-family: "Special Elite", system-ui;
+    border-radius: 5px;
+    transition: transform 0.3s  ease-in-out;
+}
+
+.btn:hover {
+    color: #fff;
+    text-shadow: 0 0 15px #10667a, 0 0 25px #082938;
+    
 }
 
 #decimal {
