@@ -54,7 +54,11 @@ btns.forEach((button) => { //loops through each button individually
                 currentNumber = '';
                 shouldResetDisplay = false;
             }
-            currentNumber += btn.dataset.number;
+            if (currentNumber === '0') {
+                currentNumber = btn.dataset.number;
+            } else {
+                currentNumber += btn.dataset.number;
+            }
             display.value = currentNumber;
             console.log('Number:', btn.dataset.number);
         }
