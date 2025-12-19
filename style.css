@@ -37,6 +37,16 @@ body {
     font-family: "Special Elite", system-ui;
 }
 
+#decimal {
+    width: 200px;
+    height: auto;
+}
+
+#backspace {
+    width: 200px;
+    height: auto;
+}
+
 
 /* // <weight>: Use a value from 100 to 900
 // <element shape>: Use a value from 0 to 100

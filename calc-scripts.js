@@ -104,6 +104,31 @@ btns.forEach((button) => { //loops through each button individually
             display.value = '';
             console.log('Display Cleared');
         }
+        if (btn.dataset.decimal) {
+            if (shouldResetDisplay) {
+                currentNumber = '0.';
+                firstNumber = null;
+                currentOperator = '';
+                display.value = currentNumber;
+                shouldResetDisplay = false;
+                return;
+            }
+            if (currentNumber === '' && currentOperator) {
+                currentNumber = '0.';
+                display.value = currentNumber;
+                return;
+            }
+            if (currentNumber === '' && !currentOperator && firstNumber === null) {
+                currentNumber = '0.';
+                display.value = currentNumber;
+                return;
+            }
+            if (currentNumber.includes('.')) {
+                return; 
+            }
+            currentNumber += '.';
+            display.value = currentNumber;
+        }
         console.log(btn.dataset)
         
     })
