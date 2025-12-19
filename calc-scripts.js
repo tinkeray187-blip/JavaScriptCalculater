@@ -47,9 +47,7 @@ console.log(operate('+', 10, 5));
 console.log(operate('*', 4, 3)); 
 
 
-let firstNumber = 1;
-let operator = '+';
-let secondNumber = 2;
+let firstNumber = null;
 let currentNumber = '';
 let currentOperator = '';
 let shouldResetDisplay = false;
@@ -75,9 +73,12 @@ btns.forEach((button) => { //loops through each button individually
                 const result = operate(currentOperator, firstNumber, Number(currentNumber));
                 display.value = result;
                 firstNumber = result;
+                currentNumber = '';
+                shouldResetDisplay = false;
             }else {
                 firstNumber = Number(currentNumber);
                 currentNumber = '';
+                shouldResetDisplay = false;
             
             }
             currentOperator = btn.dataset.operator;
@@ -85,7 +86,23 @@ btns.forEach((button) => { //loops through each button individually
         }
 
         if (btn.dataset.action === '=') {
+            if (firstNumber !== null && currentOperator && currentNumber) {
+                const result = operate(currentOperator, firstNumber, Number(currentNumber))
+                display.value = result;
+                firstNumber = result;
+                currentNumber = result.toString();
+                currentOperator = '';
+                shouldResetDisplay = true;
+            }
             console.log('Action:', btn.dataset.action);
+        }
+        if (btn.dataset.action === 'clear') {
+            firstNumber = null;
+            currentOperator = '';
+            currentNumber = '';
+            shouldResetDisplay = false;
+            display.value = '';
+            console.log('Display Cleared');
         }
         console.log(btn.dataset)
         
